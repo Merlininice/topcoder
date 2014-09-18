@@ -20,7 +20,7 @@
 
 using namespace std;
 
-#define MAXN 10000
+#define MAXN 40000
 vector<int> conn[MAXN], rconn[MAXN];
 bool visited[MAXN];
 int sta[MAXN], top, mark[MAXN], color;
@@ -58,7 +58,7 @@ void addedge(int a, int b) {
 
 class GCDLCM {
 public:
-	string possible(int, string, vector<int> , vector<int> , vector<int> );
+	string possible(int, string, vector<int>, vector<int>, vector<int>);
 };
 
 int prime[20000];
@@ -94,7 +94,7 @@ string GCDLCM::possible(int n, string type, vector<int> a, vector<int> b,
 	}
 	pn = j;
 	for (int r = 0; r < pn; ++r) {
-		int y = prime[pn];
+		int y = prime[r];
 		int mx = 0;
 		for (i = 0; i < m; ++i) {
 			v[i] = 0;
