@@ -143,4 +143,4 @@ string GCDLCM::possible(int n, string type, vector<int> a, vector<int> b,
 			return "Solution does not exist";
 	}
 	return "Solution exists";
-} 
+}
