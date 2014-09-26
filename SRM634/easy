@@ -1,0 +1,46 @@
+#include <vector>
+#include <list>
+#include <map>
+#include <set>
+#include <deque>
+#include <stack>
+#include <bitset>
+#include <algorithm>
+#include <functional>
+#include <numeric>
+#include <utility>
+#include <sstream>
+#include <iostream>
+#include <iomanip>
+#include <cstdio>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+#include <cstring>
+
+using namespace std;
+
+class ShoppingSurveyDiv1 {
+public:
+	int minValue(int, int, vector<int> );
+};
+
+int ShoppingSurveyDiv1::minValue(int N, int K, vector<int> s) {
+	int i, j, k;
+	int m;
+	m = s.size();
+	sort(s.begin(), s.end());
+	int sum = 0;
+	for (i = 0; i < m; ++i)
+		sum += s[i];
+	i = 0;
+	for (j = 0; j < N; ++j) {
+		while (i < m && s[i] <= j) {
+			sum -= s[i];
+			i++;
+		}
+		if (sum - j * (m - i) <= (N - j) * (K - 1))
+			return j;
+	}
+	return j;
+}
